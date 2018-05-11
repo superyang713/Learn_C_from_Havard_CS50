@@ -1,0 +1,9 @@
+1. clang <filename>  --->  compile a C source code and output an executable file
+with the name "a.out"
+
+2. make <filename without extension>  --->  compile a C source code and output
+an executable file with the same filename as the source file.
+
+3. cc <input source filename> -lcs50 -o <output filename>  --->  compile a C
+sourc code and import the external library called cs50, and output an
+executable file.
