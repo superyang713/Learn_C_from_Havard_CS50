@@ -1,0 +1,10 @@
+1. Work example by hand --> solve small instance by hand.
+2. Write down exact steps I have done in step 1. --> Very precise.
+3. Find patterns --> algorithm for any instance (repetitions, conditions,
+   values). If there are difficulties, try step 1 + 2 again.
+4. Check the algrithm by hand if the pattern is correct.
+5. Translate algorithm to code.
+6. Run test cases on code --> execute program to check answer.
+7. If test fails, debug failed test cases.
+   If algorithmic problem, go back to step 3 to find correct algorithms.
+   If implementation problem, go back to step 5 to correct code.
