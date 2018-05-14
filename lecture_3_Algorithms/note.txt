@@ -1,2 +1,33 @@
-linear search
-binary search -- divide and conquer
+search:
+
+linear search -- O(n) --> on the order of n.
+binary search -- divide and conquer O(log n) --> on the order of log n.
+
+
+sorting;
+
+bubble sort -- O(n²) --> the order of n² runningtime.
+selection sort
+insertion sort
+merge sort -- use recursion --> (similar to binary search) O(n log n)
+
+
+Notations:
+
+O --> the upper bound of the running time.
+Ω --> the lower bound of the running time.
+
+The special characters in vim (such as Ω and ²) are inserted as followed:
+    1. in the insert mode, type <C-K>
+    2. type the code for the special characters. For example, Ω is W*, ² is 2S.
+
+
+Recursion for sorting:
+
+on input of n elements
+    if n < 2
+        return
+    else
+        sort left half of elements
+        sort right half of elements
+        merge sorted halves
