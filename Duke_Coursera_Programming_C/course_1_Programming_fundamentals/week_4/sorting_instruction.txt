@@ -1,0 +1,13 @@
+Goal: Sort the following numbers in the ascending order.
+      (3.18, 1.36, -0.12, 0.53, 1.92, 0.98)
+
+The total number N of the numbers is N = 6.
+Step 1:
+    for i in (0, N-1) exclusively,
+        if i*th number < i+1*th number,
+            keep them.
+        if i*th number > i+1*th number,
+            swap two numbers.
+
+Step 2:
+    repeat step 1 until no more swap is needed.
