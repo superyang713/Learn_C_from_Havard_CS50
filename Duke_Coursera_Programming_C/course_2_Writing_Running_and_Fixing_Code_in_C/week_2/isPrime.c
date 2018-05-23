@@ -11,7 +11,7 @@ int isPrime(int n)
     for (int i = 2; i < n; i++)
     {
         // check if n mod i is 0
-        if (n % n == 0)
+        if (n % i == 0)
         {
             // if so, answer "no"
             return 0;
