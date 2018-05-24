@@ -1,5 +1,5 @@
-#include <stdio>
-#include <stdlib>
+#include <stdio.h>
+#include <stdlib.h>
 
 
 int sumArray(int *array, int n)
@@ -9,6 +9,7 @@ int sumArray(int *array, int n)
     for (int i = 0; i < n; i++)
     {
         answer += *ptr;
+        ptr++;
     }
     return answer;
 }
