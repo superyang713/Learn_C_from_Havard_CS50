@@ -9,21 +9,44 @@ struct _retire_info
   double rate_of_return;  
 };
 typedef struct _retire_info retire_info;
-
-double getBalance(double initial, retire_info working)
+double getBalance(double initial, int months, double contribution, double rate_of_return)
 {
-  double balance_without_interest = initial + working.contribution * working.months;
-  return balance_without_interest * (1 + working.rate_of_return / 12 * working.months);
-  
+  int n = 0;
+  double principle;
+  do 
+  {
+    if (months == 0)
+    {
+      return initial;
+    }
+    else
+    {
+      principle = initial * (1 + rate_of_return / 12) + contribution;
+      initial = principle;
+      n++;
+    }
+
+  }  
+  while (n < months);
+  return principle;
 }
 
 void retirement(int startAge, double initial, retire_info working, retire_info retired)
 {
-  double balance_working = getBalance(initial, working);
-  printf("Age %3d month %2d you have $%.21f\n", (startAge+working.months)/12, (startAge+working.months)%12, balance_working);
+  int n;
+  double balance_working;
+  double balance_retired;
+  for (n = 0; n <= working.months; n++)
+  {
+    balance_working = getBalance(initial, n, working.contribution, working.rate_of_return);
+    printf("Age %3d month %2d you have $%.2lf\n", (startAge+n)/12, (startAge+n)%12, balance_working);
+  }
+  for (n = 1; n < retired.months; n++)
+  {
+    balance_retired = getBalance(balance_working, n, retired.contribution, retired.rate_of_return);
+    printf("Age %3d month %2d you have $%.2lf\n", (startAge+working.months+n)/12, (startAge+working.months+n)%12, balance_retired);
+  }
   
-  double balance_retire = getBalance(initial, retired);
-  printf("Age %3d month %2d you have $%.21f\n", (startAge+retired.months)/12, (startAge+retired.months)%12, balance_retire);
 }
 
 
@@ -43,4 +66,5 @@ int main(void)
   int age = 327;
   double initial = 21345;
   retirement(age, initial, working, retired);
+  return EXIT_SUCCESS;
 }
